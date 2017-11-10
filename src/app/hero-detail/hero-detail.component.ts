@@ -4,7 +4,7 @@ import { Hero } from './../beans/hero';
 // Keep the Input import for now, you'll remove it later:
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location }                 from '@angular/common';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
