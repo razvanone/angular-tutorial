@@ -16,6 +16,7 @@ import { InMemoryDataService } from './in-memory-data/in-memory-data.service';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app.routing';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { AppRoutingModule } from './app.routing';
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    HeroSearchComponent
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
