@@ -1,21 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HeroSearchComponent } from './hero-search.component';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { DashboardComponent } from './dashboard.component';
 import { HeroService } from '../services/hero.service';
 import { MessageService } from '../services/message.service';
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
+import { HttpClientModule } from '@angular/common/http';
 
-describe('HeroSearchComponent', () => {
-  let component: HeroSearchComponent;
-  let fixture: ComponentFixture<HeroSearchComponent>;
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroSearchComponent ],
+      declarations: [DashboardComponent, HeroSearchComponent],
       providers: [MessageService, HeroService],
       imports: [BrowserModule,
         FormsModule,
@@ -23,11 +24,11 @@ describe('HeroSearchComponent', () => {
         RouterTestingModule,
         HttpClientModule ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroSearchComponent);
+    fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
