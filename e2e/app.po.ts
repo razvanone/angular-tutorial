@@ -5,11 +5,15 @@ export class AppPage {
     return browser.get(linkName);
   }
 
+  waitMilliseconds(millis: number) {
+    browser.sleep(millis);
+  }
+
   getH1ParagraphText() {
     return element(by.css('my-app h1')).getText();
   }
 
-  getLinkUrlByIndex(index: number) {
+  getLinkNameByIndex(index: number) {
     return element.all(by.css('my-app nav a')).get(index).getAttribute('href');
   }
 }

@@ -8,14 +8,22 @@ describe('Angular Tutorial App main test file:', () => {
     page = new AppPage();
   });
 
+  it(`Should map '/' to '/dashboard'.`, () => {
+    expect(page.navigateTo('/')).toEqual(page.navigateTo('/dashboard'));
+  });
+
   it(`Should display the website title as ${websiteTitle}.`, () => {
     page.navigateTo('/');
+    page.waitMilliseconds(2000);
+
     expect(page.getH1ParagraphText()).toEqual(`${websiteTitle}`);
   });
 
   it('should have the Dashboard and Heroes links', () => {
     page.navigateTo('/');
-    expect(page.getLinkUrlByIndex(0)).toContain('/dashboard');
-    expect(page.getLinkUrlByIndex(1)).toContain('/heroes');
+    page.waitMilliseconds(2000);
+
+    expect(page.getLinkNameByIndex(0)).toContain('/dashboard');
+    expect(page.getLinkNameByIndex(1)).toContain('/heroes');
   });
 });
